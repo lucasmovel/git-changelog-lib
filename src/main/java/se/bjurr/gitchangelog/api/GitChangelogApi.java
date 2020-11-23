@@ -133,7 +133,7 @@ public class GitChangelogApi {
   public void toFile(final File file) throws GitChangelogRepositoryException, IOException {
     createParentDirs(file);
     String changeLogContent = new String(render().getBytes("UTF-8"));
-    if(changeLogContent.length() >= settings.maxLenght()){
+    if (changeLogContent.length() >= settings.maxLenght()) {
       changeLogContent = changeLogContent.substring(0, settings.maxLenght());
     }
     write(changeLogContent.getBytes(), file);
@@ -448,6 +448,11 @@ public class GitChangelogApi {
    */
   public GitChangelogApi withUntaggedName(final String untaggedName) {
     this.settings.setUntaggedName(untaggedName);
+    return this;
+  }
+
+  public GitChangelogApi withMaxLenght(final Integer maxLenght){
+    this.settings.setMaxLenght(maxLenght);
     return this;
   }
 

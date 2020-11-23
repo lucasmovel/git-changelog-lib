@@ -448,7 +448,7 @@ public class Settings implements Serializable {
     this.ignoreCommitsWithoutIssue = ignoreCommitsWithoutIssue;
   }
 
-  public void setMaxLenght(final int maxLenght){
+  public void setMaxLenght(final int maxLenght) {
     this.maxLenght = maxLenght;
   }
 
@@ -488,5 +488,7 @@ public class Settings implements Serializable {
     return fromNullable(gitLabProjectName);
   }
 
-  public int maxLenght() { return this.maxLenght; }
+  public int maxLenght() {
+    return this.maxLenght;
+  }
 }
