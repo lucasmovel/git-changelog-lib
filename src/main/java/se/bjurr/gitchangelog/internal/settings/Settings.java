@@ -191,6 +191,8 @@ public class Settings implements Serializable {
 
   private String subDirFilter;
 
+  private int maxLenght;
+
   public Settings() {}
 
   public void setCustomIssues(final List<SettingsIssue> customIssues) {
@@ -446,6 +448,10 @@ public class Settings implements Serializable {
     this.ignoreCommitsWithoutIssue = ignoreCommitsWithoutIssue;
   }
 
+  public void setMaxLenght(final int maxLenght){
+    this.maxLenght = maxLenght;
+  }
+
   public boolean ignoreCommitsWithoutIssue() {
     return ignoreCommitsWithoutIssue;
   }
@@ -481,4 +487,6 @@ public class Settings implements Serializable {
   public Optional<String> getGitLabProjectName() {
     return fromNullable(gitLabProjectName);
   }
+
+  public int maxLenght() { return this.maxLenght; }
 }

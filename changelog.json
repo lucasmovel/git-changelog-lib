@@ -22,6 +22,7 @@
  "gitLabToken": "",
  "gitLabIssuePattern": "",
  "gitLabProjectName": "",
+ "truncateLastChars": 4000,
 
  "customIssues": [
   { "name": "Incidents", "title": "${PATTERN_GROUP_1}", "pattern": "INC([0-9]*)", "link": "http://inc/${PATTERN_GROUP}" },

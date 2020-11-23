@@ -132,7 +132,11 @@ public class GitChangelogApi {
    */
   public void toFile(final File file) throws GitChangelogRepositoryException, IOException {
     createParentDirs(file);
-    write(render().getBytes("UTF-8"), file);
+    String changeLogContent = new String(render().getBytes("UTF-8"));
+    if(changeLogContent.length() >= settings.maxLenght()){
+      changeLogContent = changeLogContent.substring(0, settings.maxLenght());
+    }
+    write(changeLogContent.getBytes(), file);
   }
 
   /**
